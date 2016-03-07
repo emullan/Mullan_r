@@ -9,6 +9,8 @@ tmp <- c(4,6,3)
 
 e <-rep(tmp,10)
 f <- rep(tmp, length.out=31)
+
+## Prof G: Not quite. Length of result should be 60.
 g <- rep(tmp,each=10)
 
 #2 create a vector based on x
@@ -18,11 +20,15 @@ xvector= exp(x2)*cos(x2)
 #3 create 2 vectors
 x3 <- seq(3,36,by=3)
 y3 <- seq(1,34,by=3)
-vector3a <-(0.1^x3)*(0.1^y3)
+
+## Prof G: Not quite. Second half of equation should be 0.2*y3
+#vector3a <-(0.1^x3)*(0.1^y3)
+vector3a <-(0.1^x3)*(0.2^y3)
 z3 <- c(1:25)
 vector3b <- (2^z3)/z3
 
 #4 create 2 different sums
+## Prof G: Not quite. Should be c(10:100)
 i <- c(1:100)
 sum = 0
 vector4a <- i^3 + 4*i^2
@@ -56,6 +62,7 @@ for (n in 1:249) vector6b <- c(vector6b,(sin(yVec[n]))/(cos(xVec[n+1])))
 vector6c <- NULL
 for (n in 3:250) vector6c <- c(vector6c,(xVec[n-2] + 2*xVec[n-1] - xVec[n]))
 
+## Prof G: Not quite. Forgot to sum the resulting vector
 vector6d <- NULL
 for (n in 1:249) vector6d <- c(vector6d,(exp(-xVec[n+1]))/(xVec[n]+10))
 
@@ -80,7 +87,7 @@ for (n in 1:250) {if ((max(yVec)-yVec[n])<200) counte=counte+1}
 countf=0
 for (n in 1:250) {if (xVec[n] %%2 == 0) countf=countf+1}
 
-
+## Prof G: Not quite right. Try xVec[order(yVec)]
 yorder <- rank(yVec)
 xorder <- NULL
 for (n in yorder) xorder <- c(xorder,xVec[n])

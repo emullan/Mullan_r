@@ -32,7 +32,11 @@ print(residgraph)
 
 carathist <- diamonds[1]   #df of the first column
 bin50 <- (max(diamonds[[1]])-min(diamonds[[1]]))/50  #width of histograms
-hist2 <- ggplot(pricehist, aes(x=diamonds[[1]]))
+
+## Prof G: pricehist is not defined
+# hist2 <- ggplot(pricehist, aes(x=diamonds[[1]]))
+## Prof G: I'll try to fix it.
+hist2 <- ggplot(diamonds, aes(x=diamonds[[1]]))
 hist2 <- hist2 +
   geom_histogram(colour = 'black',
                  fill = 'gray',binwidth=bin50) +
@@ -47,6 +51,8 @@ hist1 <- hist1 +
                  fill = 'gray',binwidth=bin50) +
   labs(x=names(diamonds)[[7]])    #names method will print "price" on x axis
 print(hist1)
+
+## Prof G: Looks like you didn't finish?
 
 
 

@@ -1,6 +1,7 @@
 data(diamonds)
 require("ggplot2")
 
+##Prof G: This did not return a dataframe?
 #1. extract numeric columns from a data frame
 explore1 <- function(df)
 { 
@@ -10,6 +11,9 @@ explore1 <- function(df)
   return(col)
 }
 
+##Prof G: Because explore1 did not return a data frame, it cannot be used to extract the columns
+##Prof G: for input into this function. This function expects a df with numeric columns but does
+##Prof G: not document that expectation in the header.
 #2 Create a function that show pearson correlation coefficients for columns in a df
 explore2 <- function(df)
   { name <- NULL
@@ -31,6 +35,7 @@ explore2 <- function(df)
     }
 
 #3 Create scatter plots for each pair of numeric variables
+##Prof G: This function fails. coldf is not defined.
 explore3 <- function(df)
 { for (n in 1:(coldf-1)) #run through each pairing of 
     for (m in n:coldf)
